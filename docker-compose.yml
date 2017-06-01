@@ -1,0 +1,25 @@
+version: '2'
+services:
+  web:
+    build: ui
+    container_name: ui
+    env_file:
+      - .env
+    ports:
+      - 7777:8000
+    networks:
+      main:
+        aliases:
+          - web
+  gcode:
+    build: gcode
+    container_name: gcode
+    env_file:
+      - .env
+    networks:
+      main:
+        aliases:
+          - gcode
+    
+networks:
+  main:

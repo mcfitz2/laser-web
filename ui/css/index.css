@@ -1,0 +1,9 @@
+body {
+    padding-top: 5rem;
+}
+
+textarea {
+    resize: both;
+    width: 90%;
+    height: 500px;
+}
