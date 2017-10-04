@@ -79,6 +79,7 @@ function generateGcode(app) {
         offset_y: offset_y
     }, function(data) {
         app.gcode = data;
+        $('.nav-tabs a[href="#gcode"]').tab('show');
     }, "text");
 }
 
