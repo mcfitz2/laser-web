@@ -113,6 +113,7 @@ $(function() {
                 controllers: {
                     onImageClick: (e, model) => {
                         app.selectedImage = model.image;
+                        $('.nav-tabs a[href="#image-view"]').tab('show');
                     },
                     onGenerateClicked: (e, model) => {
                         generateGcode(model.app);
