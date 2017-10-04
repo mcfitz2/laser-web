@@ -36,6 +36,8 @@ function baseName(str) {
 }
 
 function uploadImage() {
+
+
     $.ajax({
         url: '/image',
         type: 'POST',
@@ -50,6 +52,7 @@ function uploadImage() {
         }
     });
 }
+
 function selectImage(id) {
     for (var i = 0; i < app.images.length; i++) {
         if (app.images[i]._id == id) {
@@ -106,7 +109,7 @@ $(function() {
         };
         rivets.bind(document.querySelector('body'), // bind to the element with id "candy-shop"
             {
-                app: app, 
+                app: app,
                 controllers: {
                     onImageClick: (e, model) => {
                         app.selectedImage = model.image;

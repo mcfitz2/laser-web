@@ -1,7 +1,10 @@
 from PIL import Image
-import io, traceback
-import zerorpc
+import io, traceback, sys, json
+#import zerorpc
 import logging, base64
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
 
 logging.basicConfig()
 class Generator(object):
@@ -73,8 +76,20 @@ class Generator(object):
                                       machine["start_code"], machine["end_code"],
                                       machine["dot_size"], tuple(offset), tuple(final_dimensions))
         output_file.write(machine["postfix"])
+
         return output_file.getvalue()
+
+
+
+@app.route("/generate", methods=["POST"])
+def generate():
+    settings = request.get_json()
+    app.logger.info(settings)
+    g = Generator()
+    gcode = g.generate(settings["image"], settings["machine"], settings["material"],  settings["final_dimensions"], settings["offset"])
+    app.logger.info(gcode)
+    return jsonify(gcode=gcode)
+    
+
 if __name__ == "__main__":
-    s = zerorpc.Server(Generator())
-    s.bind("tcp://0.0.0.0:4242")
-    s.run()
+    app.run(host='0.0.0.0', debug=True, port=5000)

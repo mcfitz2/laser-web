@@ -16,10 +16,12 @@ services:
     container_name: gcode
     env_file:
       - .env
+    expose:
+      - "5000"
     networks:
       main:
         aliases:
           - gcode
-    
+
 networks:
   main:

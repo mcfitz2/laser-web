@@ -1,234 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-            <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-                <meta content="" name="description">
-                    <meta content="" name="author">
-                        <title>
-                            LaserThing
-                        </title>
-                        <!-- Bootstrap core CSS -->
-                        <link href="/css/bootstrap.min.css" rel="stylesheet">
-                            <!-- Custom styles for this template -->
-                            <link href="/css/index.css" rel="stylesheet">
-                            </link>
-                        </link>
-                    </meta>
-                </meta>
-            </meta>
-        </meta>
-    </head>
-    <body>
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-            <button aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navbarsExampleDefault" data-toggle="collapse" type="button">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <title>
+        LaserThing
+    </title>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/css/index.css" rel="stylesheet">
+    </link>
+    </link>
+    </meta>
+    </meta>
+    </meta>
+    </meta>
+</head>
+
+<body>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+        <button aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navbarsExampleDefault" data-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon">
                 </span>
             </button>
-            <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#">
                 LaserThing
             </a>
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
-                </ul>
-                <ul class="navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
                             Machines
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
                             Materials
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
                             Settings
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
                             {{user.name}}
                         </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-2">
-                    <button class="btn btn-primary" data-target="#upload-modal" data-toggle="modal">
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <button class="btn btn-primary" data-target="#upload-modal" data-toggle="modal">
                         Upload Image
                     </button>
-                    <div class="list-group" id="file-list">
-                        <a class="list-group-item list-group-item-action flex-column align-items-start" href="#" rv-each-image="app.images" rv-on-click="controllers.onImageClick">
-                            <div class="d-flex w-100 justify-content-between">
-                                <p class="mb-1" rv-text="image.name">
-                                </p>
-                            </div>
-                            <small rv-text="image.date | since">
+                <div class="list-group" id="file-list">
+                    <a class="list-group-item list-group-item-action flex-column align-items-start" href="#" rv-each-image="app.images" rv-on-click="controllers.onImageClick">
+                        <div class="d-flex w-100 justify-content-between">
+                            <p class="mb-1" rv-text="image.name">
+                            </p>
+                        </div>
+                        <small rv-text="image.date | since">
                             </small>
-                        </a>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-md-2">
-                    <form>
-                        <div class="form-group">
-                            <label for="machine-selector">
+            </div>
+            <div class="col-md-2">
+                <form>
+                    <div class="form-group">
+                        <label for="machine-selector">
                                 Machine
                             </label>
-                            <select class="form-control" id="machine-selector" placeholder="Choose Machine" rv-value="app.selectedMachine">
+                        <select class="form-control" id="machine-selector" placeholder="Choose Machine" rv-value="app.selectedMachine">
                                 <option rv-each-machine="app.machines" rv-text="machine.name" rv-value="machine._id">
                                 </option>
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="material-selector">
+                    </div>
+                    <div class="form-group">
+                        <label for="material-selector">
                                 Material
                             </label>
-                            <select class="form-control" id="material-selector" placeholder="Choose Material" rv-value="app.selectedMaterial">
+                        <select class="form-control" id="material-selector" placeholder="Choose Material" rv-value="app.selectedMaterial">
                                 <option rv-each-material="app.materials" rv-text="material.name" rv-value="material._id">
                                 </option>
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="offset-x">
+                    </div>
+                    <div class="form-group">
+                        <label for="offset-x">
                                 Offset X
                             </label>
-                            <input class="form-control" id="offset-x" placeholder="0" rv-value="app.selectedImage.offset_x" type="number">
-                            </input>
-                        </div>
-                        <div class="form-group">
-                            <label for="offset-y">
+                        <input class="form-control" id="offset-x" placeholder="0" rv-value="app.selectedImage.offset_x" type="number">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <label for="offset-y">
                                 Offset Y
                             </label>
-                            <input class="form-control" id="offset-y" placeholder="0" rv-value="app.selectedImage.offset_y" type="number">
-                            </input>
-                        </div>
-                        <div class="form-group">
-                            <label for="dpi">
+                        <input class="form-control" id="offset-y" placeholder="0" rv-value="app.selectedImage.offset_y" type="number">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <label for="dpi">
                                 DPI
                             </label>
-                            <input class="form-control" id="dpi" placeholder="500" rv-value="app.selectedImage.dpi" type="number">
-                            </input>
-                        </div>
-                        <div class="btn-group">
-                            <button class="btn btn-primary"  rv-on-click="controllers.onGenerateClicked">
+                        <input class="form-control" id="dpi" placeholder="500" rv-value="app.selectedImage.dpi" type="number">
+                        </input>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" rv-on-click="controllers.onGenerateClicked">
                                 Generate
                             </button>
-                            <button class="btn btn-success" rv-enabled="app.gcode" rv-on-click="controllers.onSaveGCode">
+                        <button class="btn btn-success" rv-enabled="app.gcode" rv-on-click="controllers.onSaveGCode">
                                 Save GCode
                             </button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-8">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#image-view" role="tab">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#image-view" role="tab">
                                 Image
                             </a>
-                        </li>
-                        <!-- <li class="nav-item">
+                    </li>
+                    <!-- <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#visualize" role="tab" href="#">Visualize</a>
                     </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#gcode" role="tab">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#gcode" role="tab">
                                 GCode
                             </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" rv-show="app.selectedImage">
-                        <div class="tab-pane active" id="image-view" role="tabpanel">
-                            <h5 id="current-dimensions-px">
-                                <span rv-text="app.selectedImage.width">
-                                </span>
-                                px by
-                                <span rv-text="app.selectedImage.height">
-                                </span>
-                                px
-                            </h5>
-                            <h5 id="current-dimensions-mm">
-                                <span rv-text="app.selectedImage.dpi | width |in_to_mm">
-                                </span>
-                                mm by
-                                <span rv-text="app.selectedImage.dpi | height |in_to_mm">
-                                </span>
-                                mm
-                            </h5>
-                            <img rv-src="app.selectedImage.url" width="500px">
-                            </img>
-                        </div>
-                        <!-- <div class="tab-pane" id="visualize" role="tabpanel">
+                    </li>
+                </ul>
+                <div class="tab-content" rv-show="app.selectedImage">
+                    <div class="tab-pane active" id="image-view" role="tabpanel">
+                        <h5 id="current-dimensions-px">
+                            <span rv-text="app.selectedImage.width">
+                                </span> px by
+                            <span rv-text="app.selectedImage.height">
+                                </span> px
+                        </h5>
+                        <h5 id="current-dimensions-mm">
+                            <span rv-text="app.selectedImage.dpi | width |in_to_mm">
+                                </span> mm by
+
+                            <span rv-text="app.selectedImage.dpi | height |in_to_mm">
+                                </span> mm
+                        </h5>
+                        <img rv-src="app.selectedImage.url" width="500px">
+                        </img>
+                    </div>
+                    <!-- <div class="tab-pane" id="visualize" role="tabpanel">
                         <canvas width="800px" height="500px" id="canvas"></canvas>
                     </div> -->
-                        <div class="tab-pane" id="gcode" role="tabpanel">
-                            <div>
-                                <textarea id="gcode-editor" rv-text="app.gcode">
+                    <div class="tab-pane" id="gcode" role="tabpanel">
+                        <div>
+                            <textarea id="gcode-editor" rv-text="app.gcode">
                                 </textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div aria-hidden="true" class="modal fade" id="upload-modal" role="dialog" tabindex="-1">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="upload-modal-label">
-                                Upload Image File
-                            </h5>
-                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                <span aria-hidden="true">
-                                    ×
-                                </span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <label class="control-label">
-                                Select File
-                            </label>
-                            <form enctype="multipart/form-data" id="uploadform">
-                                <input name="file" type="file"/>
-                            </form>
-                            <div class="progress">
-                                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" class="progress-bar" id="upload-progress" role="progressbar" style="width:70%">
-                                    <span class="sr-only">
-                                        70% Complete
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" data-dismiss="modal" type="button">
-                                Close
-                            </button>
-                            <button class="btn btn-primary" onclick="javascript:uploadImage();" type="button">
-                                Save changes
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /.container -->
-        <!-- Bootstrap core JavaScript
+        <div aria-hidden="true" class="modal fade" id="upload-modal" role="dialog" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="upload-modal-label">
+                            Upload Image File
+                        </h5>
+                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span aria-hidden="true">
+                                    ×
+                                </span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <label class="control-label">
+                                Select File
+                            </label>
+                        <form enctype="multipart/form-data" id="uploadform">
+                            <input name="file" type="file" accepts="image/png, image/svg+xml" />
+                        </form>
+                        <div class="progress">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" class="progress-bar" id="upload-progress" role="progressbar" style="width:70%">
+                                <span class="sr-only">
+                                        70% Complete
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                                Close
+                            </button>
+                        <button class="btn btn-primary" onclick="javascript:uploadImage();" type="button">
+                                Save changes
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    <!-- Bootstrap core JavaScript
 ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js">
-        </script>
-        <script crossorigin="anonymous" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
-        </script>
-        <script src="/js/bootstrap.min.js">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js">
-        </script>
-        <script src="/js/sightglass.js">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.9.6/rivets.js">
-        </script>
-        <script src="/js/index.js">
-        </script>
-    </body>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+    </script>
+    <script crossorigin="anonymous" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
+    </script>
+    <script src="/js/bootstrap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js">
+    </script>
+    <script src="/js/sightglass.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.9.6/rivets.js">
+    </script>
+    <script src="/js/index.js">
+    </script>
+</body>
+
 </html>
